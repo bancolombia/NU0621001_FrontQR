@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detección de dispositivo</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var userAgent = navigator.userAgent.toLowerCase();
+
+        var isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|huawei|honor/.test(userAgent);
+
+        if (isMobile) {
+          if (userAgent.indexOf("android") !== -1) {
+            window.location.href = "https://play.google.com/store/apps/details?id=co.com.bancolombia.personas.superapp";
+          } else if (/iphone|ipad|ipod/.test(userAgent)) {
+            window.location.href = "https://apps.apple.com/us/app/mi-bancolombia/id6526460670";
+          } else if (userAgent.indexOf("huawei") !== -1 || userAgent.indexOf("honor") !== -1) {
+            window.location.href = "https://appgallery.huawei.com/app/C111497045";
+          } else {
+            window.location.href = "https://play.google.com/store/apps/details?id=co.com.bancolombia.personas.superapp";
+          }
+        } else {
+          window.location.href = "desktop.html";
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Detectando tu dispositivo...</h1>
+    <p>Si no eres redirigido automáticamente, <a href="desktop.html">haz clic aquí (versión desktop)</a>.</p>
+  </body>
+</html>
